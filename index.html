@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Trương Văn An</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="dropdown-top">
+            <span id="title">Trương Văn An</span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="dropdown-bottom">
+            <ul>
+                <li id="fb">
+                    <i class="fa-brands fa-facebook"  style="--cl: #4267B2;"></i>
+                    <span>FaceBook</span>
+                </li>
+                <li id="tiktok">
+                    <i class="fa-brands fa-tiktok" style="--cl: #171515;"></i>
+                    <span>TikTok</span>
+                </li>
+                <li id="github">
+                    <i class="fa-brands fa-github" style="--cl: #171515;"></i>
+                    <span>Github</span>
+                </li>
+                <li id="ins">
+                    <i class="fa-brands fa-square-instagram" style="--cl:#e1306c;"></i>
+                    <span>Instagram</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+    <script>
+        var user = ["Trương Văn An", "@truongvanan2k2", "truong-van-an","truongvanan22cit"]
+        var title =document.querySelector("#title");
+        var dropTop = document.querySelector(".dropdown-top");
+        var faceBook = document.querySelector("#fb");
+        var tiktok = document.querySelector("#tiktok");
+        var github = document.querySelector("#github");
+        var ins = document.querySelector("#ins");
+        var image = document.createElement("div")
+        image.classList.add("image")
+        image.innerHTML = `<img src="truongan.jpg" alt="">`
+        dropTop.appendChild(image)
+        var image2 = document.createElement("div")
+        image2.classList.add("image")
+        image2.innerHTML = `<img src="an.png" alt="">`
+        dropTop.appendChild(image2)
+        var image3 = document.createElement("div")
+        image3.classList.add("image")
+        image3.innerHTML = `<img src="an2.jpg" alt="">`
+        dropTop.appendChild(image3)
+        function styleCss(){
+            title.style.fontSize = 19 + 'px';
+            title.style.textTransform = 'none';
+            dropTop.classList.remove("active")
+        }
+        dropTop.addEventListener("click", ()=>{
+            dropTop.classList.toggle("active");
+        })
+        faceBook.addEventListener("click",()=>{
+            title.innerHTML = `${faceBook.innerText}: ${user[0]}`;
+            image.style.display='block';
+            image2.style.display = 'none';
+            image3.style.display = 'none';
+            styleCss();
+        })
+        tiktok.addEventListener("click",()=>{
+            title.innerHTML = `${tiktok.innerText}: ${user[1]}`;
+            image.style.display='none';
+            image2.style.display='none';
+            image3.style.display='block';
+            styleCss();
+        })
+        github.addEventListener("click",()=>{
+            title.innerHTML = `${github.innerText}: ${user[2]}`;
+            image.style.display='none';
+            image2.style.display='block';
+            image3.style.display='none';
+            styleCss();
+        })
+        ins.addEventListener("click",()=>{
+            title.innerHTML = `${ins.innerText}: ${user[3]}`;
+            image.style.display='none';
+            image3.style.display='block';
+            image2.style.display='none';
+            styleCss();
+        })
+    </script>
+</html>
